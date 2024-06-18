@@ -4,7 +4,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func Init(e *echo.Echo) {
+func Init(g *echo.Group) {
 
-	e.GET("/register", Register)
 }
