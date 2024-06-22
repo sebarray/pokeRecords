@@ -7,14 +7,14 @@ import (
 	"pokeRecords/pkg/usesCases/handlers/records/put"
 )
 
-type RecordsHandler struct {
+type Handler struct {
 	Get    get.Iget
 	Post   post.Ipost
 	Put    put.Iput
 	Delete delete.Idelete
 }
 
-func (h *RecordsHandler) NewRecordsHandler() {
+func (h *Handler) NewRecordsHandler() {
 	h.Get = &get.Get{}
 	h.Post = &post.Post{}
 	h.Put = &put.Put{}
