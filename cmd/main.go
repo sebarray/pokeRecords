@@ -1,20 +1,12 @@
 package main
 
-import (
-	"fmt"
-	"pokeRecords/pkg/domain/records"
+import "pokeRecords/infrastructure/entryPoint/server_http"
 
-	"github.com/go-playground/validator"
-)
+func init() {
+
+}
 
 func main() {
-	x := records.CreateRecordRequest{
-		Email: "test@hotmail..com",
-	}
-	err := validator.New().Struct(x)
-	if err != nil {
-		fmt.Println(err.Error())
-
-	}
-
+	s := server_http.Server{}
+	s.NewServer()
 }

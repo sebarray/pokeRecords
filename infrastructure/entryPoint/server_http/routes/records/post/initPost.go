@@ -1,9 +1,19 @@
 package post
 
-import "github.com/labstack/echo/v4"
+import (
+	"pokeRecords/infrastructure/entryPoint/server_http/routes/records/middleware"
+	"pokeRecords/pkg/usesCases/handlers/records"
 
-func InitPost(g *echo.Group) {
+	"github.com/labstack/echo/v4"
+)
 
-	g.POST("/records", CreateRecord)
+type PostRoute struct {
+	Handler records.Handler
+}
+
+func InitPost(g *echo.Group, Handler records.Handler) {
+	var p PostRoute
+	p.Handler = Handler
+	g.POST("/records", p.CreateRecord, middleware.RecoveryMiddleware)
 
 }

@@ -1,9 +1,9 @@
 package records
 
 type CreateRecordRequest struct {
-	RecordName string `json:"recordName"`
-	Email      string `json:"email" validate:"required,email"`
-	Color      string `json:"color"`
+	Name  string `json:"name"  db:"NAME"`
+	Color string `json:"color"   db:"COLOR"`
+	Value int64  `json:"value"   db:"VALUE" `
 }
 
 type CreateRecordResponse struct {

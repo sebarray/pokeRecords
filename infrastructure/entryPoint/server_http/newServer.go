@@ -1,4 +1,4 @@
-package server
+package server_http
 
 import (
 	"pokeRecords/infrastructure/entryPoint/server_http/routes/records"
@@ -9,7 +9,7 @@ import (
 type Server struct {
 }
 
-func NewServer() {
+func (Server) NewServer() {
 	e := echo.New()
 	Route(e)
 	e.Logger.Fatal(e.Start(":8080"))
